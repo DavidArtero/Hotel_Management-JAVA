@@ -30,6 +30,7 @@ public class Login extends JFrame {
         b1.setBackground(Color.BLACK);
         b1.setForeground(Color.WHITE);
         b1.setBounds(40,150,120,30);
+       // b1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         add(b1);
 
         b2 = new JButton("Cancel");
@@ -38,10 +39,23 @@ public class Login extends JFrame {
         b2.setForeground(Color.WHITE);
         add(b2);
 
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/second.jpg"));
+        //Redimensionar imagen o escalarla
+        Image i2 = i1.getImage().getScaledInstance(200,200, Image.SCALE_DEFAULT);
+        ImageIcon i3 = new ImageIcon(i2);
+
+        getContentPane().setBackground(Color.WHITE);
+
+        JLabel l3 = new JLabel(i3);
+        l3.setBounds(350,10,200,200);
+        add(l3);
+
+
+
 
 
         setLayout(null);
-        setBounds(500,300,600,400);
+        setBounds(600,300,600,300);
         setVisible(true);
     }
 
