@@ -1,9 +1,9 @@
-import javafx.scene.control.RadioButton;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 
 public class AddEmployee extends JFrame implements ActionListener {
 
@@ -145,9 +145,33 @@ public class AddEmployee extends JFrame implements ActionListener {
         String name = t1.getText();
         String age = t2.getText();
         String salary = t3.getText();
-        String phone = t2.getText();
-        String dni = t1.getText();
-        String email = t2.getText();
+        String phone = t4.getText();
+        String dni = t5.getText();
+        String email = t6.getText();
+
+        String gender  = null;
+
+        if(r1.isSelected()){
+            gender = "Male";
+        }else if (r2.isSelected()){
+            gender = "Female";
+        }
+
+        String job = (String) c1.getSelectedItem();
+
+        Conexion c = new Conexion();
+        String str = "insert into employee values('"+name+"', '"+age+"', '"+salary+"', '"+phone+"', '"+dni+"', '"+email+"', '"+gender+"', '"+job+"')";
+
+        try{
+           c.s.executeUpdate(str);
+           JOptionPane.showMessageDialog(null, "New Employee Added");
+           this.setVisible(false);
+
+        }catch (Exception exc){
+            System.out.println(exc);
+        }
+
+
 
     }
 

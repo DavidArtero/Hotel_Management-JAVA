@@ -1,7 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Dashboard extends JFrame {
+public class Dashboard extends JFrame implements ActionListener {
 
     JMenuBar mb;
     JMenu m1,m2;
@@ -21,15 +23,19 @@ public class Dashboard extends JFrame {
         mb.add(m2);
 
         i1 = new JMenuItem("RECEPTION");
+        i1.addActionListener(this);
         m1.add(i1);
 
         i2 = new JMenuItem("ADD EMPLOYEE");
+        i2.addActionListener(this);
         m2.add(i2);
 
         i3 = new JMenuItem("ADD ROOMS");
+        i3.addActionListener(this);
         m2.add(i3);
 
         i4 = new JMenuItem("ADD DRIVERS");
+        i4.addActionListener(this);
         m2.add(i4);
 
         mb.setBounds(0,0,1900,30);
@@ -56,7 +62,22 @@ public class Dashboard extends JFrame {
 
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getActionCommand().equals("RECEPTION")){
+
+        }else if(e.getActionCommand().equals("ADD EMPLOYEE")){
+            new AddEmployee().setVisible(true);
+        }else if(e.getActionCommand().equals("ADD ROOMS")){
+            new AddRooms().setVisible(true);
+        }
+
+
+    }
+
     public static void main(String[] args) {
         new Dashboard().setVisible(true);
     }
+
+
 }
