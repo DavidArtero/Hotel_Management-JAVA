@@ -1,8 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
-public class HotelManagementSystem extends JFrame {
+public class HotelManagementSystem extends JFrame implements ActionListener {
 
     HotelManagementSystem(){
         setBounds(300,200,1366,565);
@@ -26,11 +28,12 @@ public class HotelManagementSystem extends JFrame {
         b1.setBackground(Color.WHITE);
         b1.setForeground(Color.BLACK);
         b1.setBounds(1150,450,150,50);
+        b1.addActionListener(this);
         l1.add(b1);
 
 
         //mostrar texto "parpadeando"
-        while(true){
+        /*while(true){
             l2.setVisible(false);
             try{
                 Thread.sleep(800);
@@ -43,15 +46,19 @@ public class HotelManagementSystem extends JFrame {
             }catch (Exception e){
 
             }
-        }
+        }*/
+    }
 
-
-
-
-
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        new Login().setVisible(true);
+        //Pantalla principal deja de visualizarse al abrir el login
+        this.setVisible(false);
     }
 
     public static void main(String[] args) {
         new HotelManagementSystem();
     }
+
+
 }
