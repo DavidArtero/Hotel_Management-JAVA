@@ -33,7 +33,7 @@ public class HotelManagementSystem extends JFrame implements ActionListener {
 
 
         //mostrar texto "parpadeando"
-        /*while(true){
+       while(true){
             l2.setVisible(false);
             try{
                 Thread.sleep(800);
@@ -46,7 +46,7 @@ public class HotelManagementSystem extends JFrame implements ActionListener {
             }catch (Exception e){
 
             }
-        }*/
+        }
     }
 
     @Override

@@ -82,7 +82,7 @@ public class Login extends JFrame implements ActionListener {
 
                 if(rSet.next()){
                     System.out.println("Success");
-                    new HotelManagementSystem().setVisible(true);
+                    new Dashboard().setVisible(true);
                     this.setVisible(false);
 
 
