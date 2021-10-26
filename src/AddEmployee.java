@@ -160,7 +160,7 @@ public class AddEmployee extends JFrame implements ActionListener {
         String job = (String) c1.getSelectedItem();
 
         Conexion c = new Conexion();
-        String str = "insert into employee values('"+name+"', '"+age+"', '"+salary+"', '"+phone+"', '"+dni+"', '"+email+"', '"+gender+"', '"+job+"')";
+        String str = "insert into employee values('"+name+"', '"+age+"','"+gender+"', '"+job+"', '"+salary+"', '"+phone+"', '"+dni+"', '"+email+"')";
 
         try{
            c.s.executeUpdate(str);
