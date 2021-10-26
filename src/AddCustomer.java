@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
-
+//https://www.youtube.com/watch?v=vc99QnrQLRM
 public class AddCustomer extends JFrame implements ActionListener {
 
     JTextField t1,t2,t3,t4,t5;
@@ -119,7 +119,7 @@ public class AddCustomer extends JFrame implements ActionListener {
         b2.setBackground(Color.BLACK);
         b2.setForeground(Color.WHITE);
         b2.setBounds(210,410,120,25);
-        b1.addActionListener(this);
+        b2.addActionListener(this);
         add(b2);
 
 
@@ -134,19 +134,46 @@ public class AddCustomer extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String id = (String) c1.getSelectedItem();
-        String number = t1.getText();
-        String name = t2.getText();
-        String gender = null;
-        if(r1.isSelected()){
-            gender = "Male";
-        }else if(r2.isSelected()){
-            gender = "Female";
+        if(e.getSource()==b1){
+            String id = (String) c1.getSelectedItem();
+            String number = t1.getText();
+            String name = t2.getText();
+            String gender = null;
+            if(r1.isSelected()){
+                gender = "Male";
+            }else if(r2.isSelected()){
+                gender = "Female";
+            }
+            String country = t3.getText();
+            String room = c2.getSelectedItem();
+            String status = t4.getText();
+            String deposit = t5.getText();
+
+            String str = "insert into customer values('"+id+"','"+number+"','"+name+"','"+gender+"','"+country+"','"+room+"','"+status+"','"+deposit+"')";
+            String str2 = "update room set available = 'Occupied' where room_number = '"+room+"'";
+
+
+
+            try{
+                Conexion c = new Conexion();
+                c.s.executeUpdate(str);
+                c.s.executeUpdate(str2);
+
+                JOptionPane.showMessageDialog(null,"New Customer Added");
+                this.setVisible(false);
+                new Reception().setVisible(true);
+            }catch (Exception ex){
+                System.out.println(ex);
+            }
+        }else if(e.getSource()==b2){
+            new Reception().setVisible(true);
+            this.setVisible(false);
         }
-        String country = t3.getText();
-        String room = c2.getSelectedItem();
-        String status = t4.getText();
-        String deposit = t5.getText();
+
+
+
+
+
     }
 
     public static void main(String[] args) {
