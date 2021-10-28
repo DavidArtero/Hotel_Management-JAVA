@@ -122,13 +122,20 @@ public class AddCustomer extends JFrame implements ActionListener {
         b2.addActionListener(this);
         add(b2);
 
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/fifth.png"));
+        Image i2 = i1.getImage().getScaledInstance(300,400,Image.SCALE_DEFAULT);
+        ImageIcon i3 = new ImageIcon(i2);
+        JLabel l10 = new JLabel(i3);
+        l10.setBounds(400,50,300,400);
+        add(l10);
+
 
 
 
         getContentPane().setBackground(Color.WHITE);
 
         setLayout(null);
-        setBounds(500,200,900,500);
+        setBounds(500,200,780,500);
         setVisible(true);
     }
 
