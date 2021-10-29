@@ -90,8 +90,15 @@ public class UpdateRoom extends JFrame implements ActionListener {
         b3.addActionListener(this);
         add(b3);
 
+        ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/seventh.jpg"));
+        Image i2 = i1.getImage().getScaledInstance(500,300, Image.SCALE_DEFAULT);
+        ImageIcon i3 = new ImageIcon(i2);
+        JLabel l6 = new JLabel(i3);
+        l6.setBounds(400,10,500,400);
+        add(l6);
+
         setLayout(null);
-        setBounds(500,200,1000,450);
+        setBounds(500,200,950,450);
         setVisible(true);
     }
 
@@ -120,6 +127,20 @@ public class UpdateRoom extends JFrame implements ActionListener {
             }
 
         }else if(e.getSource() == b2){
+            try{
+                Conexion c = new Conexion();
+                String room = t1.getText();
+                String available = t2.getText();
+                String status = t3.getText();
+
+                String str = "update room set available = '"+available+"',status = '"+status+"' where room_number = '"+room+"'";
+                c.s.executeUpdate(str);
+                JOptionPane.showMessageDialog(null, "Room updated Successfully");
+                this.setVisible(false);
+
+            }catch (Exception exc){
+                System.out.println(exc);
+            }
 
         }else if(e.getSource() == b3){
             new Reception().setVisible(true);
