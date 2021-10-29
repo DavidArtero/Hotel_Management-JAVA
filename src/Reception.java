@@ -8,7 +8,7 @@ public class Reception extends JFrame implements ActionListener {
     JButton b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12;
 
     public Reception(){
-        b1 = new JButton("New Customer Form");
+        b1 = new JButton("New Customer");
         b1.setBackground(Color.BLACK);
         b1.setForeground(Color.WHITE);
         b1.setBounds(10,30,200,30);
@@ -122,6 +122,8 @@ public class Reception extends JFrame implements ActionListener {
             this.setVisible(false);
 
         }else if (e.getSource() == b5) {
+            new CustomerInfo().setVisible(true);
+            this.setVisible(false);
 
         }else if (e.getSource() == b6) {
             new ManagerInfo().setVisible(true);
