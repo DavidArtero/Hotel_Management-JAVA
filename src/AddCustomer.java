@@ -13,7 +13,7 @@ public class AddCustomer extends JFrame implements ActionListener {
     JRadioButton r1,r2;
 
     AddCustomer(){
-         JLabel l1 = new JLabel("NEW CUSTOMER FORM");
+         JLabel l1 = new JLabel("NEW CUSTOMER");
          l1.setBounds(100,20,300,30);
          l1.setFont(new Font("Tahoma", Font.BOLD,20));
          add(l1);
