@@ -13,8 +13,6 @@ public class Login extends JFrame implements ActionListener {
     JPasswordField t2;
     JButton b1,b2;
 
-   // https://www.youtube.com/watch?v=jrTjl3bf2fQ
-
     Login(){
         l1 = new JLabel("Username");
         l1.setBounds(40,20,100,30);

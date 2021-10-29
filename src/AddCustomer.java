@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
-//https://www.youtube.com/watch?v=vc99QnrQLRM
+
 public class AddCustomer extends JFrame implements ActionListener {
 
     JTextField t1,t2,t3,t4,t5;
