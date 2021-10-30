@@ -130,7 +130,8 @@ public class Reception extends JFrame implements ActionListener {
             this.setVisible(false);
 
         }else if (e.getSource() == b7) {
-
+            new CheckOut().setVisible(true);
+            this.setVisible(false);
         }else if (e.getSource() == b8) {
             new UpdateCheck().setVisible(true);
             this.setVisible(false);

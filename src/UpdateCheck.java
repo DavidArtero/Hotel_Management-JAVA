@@ -168,7 +168,7 @@ public class UpdateCheck extends JFrame implements ActionListener {
                 String noomNumber = t1.getText();
                 String name = t2.getText();
                 String status = t3.getText();
-                String deposit = t4.getText(); 
+                String deposit = t4.getText();
 
                 c.s.executeUpdate("update customer set room = '"+noomNumber+"', name = '"+name+"', status = '"+status+"', deposit = '"+deposit+"' where number = '"+id+"'");
 
